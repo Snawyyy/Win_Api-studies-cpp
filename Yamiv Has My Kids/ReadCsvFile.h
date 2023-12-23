@@ -1,7 +1,15 @@
+#include <iostream>
+
+#include "Windows.h"
+#include "fstream"
 #include <string>
+
+
+using namespace std;
+
 #pragma once
 
-inline std::string ReadCsvFileLine(int WantedLine);
+inline string ReadCsvFileLine(int WantedLine);
 
 
 

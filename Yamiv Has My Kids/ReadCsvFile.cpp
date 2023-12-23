@@ -1,11 +1,4 @@
-#include <iostream>
-
 #include "ReadCsvFile.h"
-#include "Windows.h"
-#include "fstream"
-
-using namespace std;
-
 
 inline string ReadCsvFileLine(int WantedLine)
 {
