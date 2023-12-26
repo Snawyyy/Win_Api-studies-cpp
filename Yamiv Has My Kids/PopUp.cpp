@@ -56,8 +56,6 @@ int CalculateRemTime()
             return (RemHours + RemMinutes);
         }
     }
-    else {
         KillTimer(nullptr, 1);
         return 0;
-    }
 }
