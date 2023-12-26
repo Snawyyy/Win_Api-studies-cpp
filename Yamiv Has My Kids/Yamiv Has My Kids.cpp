@@ -10,39 +10,20 @@
 
 
 
-VOID CALLBACK TimerProc() //The Function called when the timer's time is up.
-{
-
-    std::string Text = ReadCsvFileLine(1);
-
-    int Hour = ((Text[0]-48)*10+ Text[1]-48); //crude way of outputing the Hour from the string
-    int Minutes = ((Text[3] - 48) * 10 + Text[4] - 48); //crude way of outputing the Minutes from the string
-
-    std::cout << Minutes << std::endl; //debug
-
-    PopUp(Text.c_str(), "BibiNet"); // commend that creates a popup
-    KillTimer(NULL, 1);  
-
-}
-
 int main()
 {
-    ReadCsvFile("TaskList.csv");
     SYSTEMTIME St;
     GetLocalTime(&St); //gets Local time.
-
+        TimedNotification();
+    
     std::cout << "Hello World!\n the time now is: " << St.wHour << ":" << St.wMinute << std::endl; //debug
-
-   // SetTimer(nullptr,        //handle to main window (there is no main window)
-     //   1,                  //timer identifier
-     //   CalculateRemTime(),              //time.
-     //   (TIMERPROC)TimerProc); // calls the function that pops the Popup.
 
     MSG msg;
     while (GetMessage(&msg, NULL, 0, 0)) // keeps the cmd open beacuse there is no window, without that the timer cant work.
     {
         TranslateMessage(&msg);
         DispatchMessage(&msg);
+        TimedNotification();
     }
 
 }

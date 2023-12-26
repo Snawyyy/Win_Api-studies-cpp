@@ -3,6 +3,7 @@
 
 void CreateCsvFile(const char FileName[])
 {
+
 	HANDLE TaskFile =CreateFileA(
 		FileName,		    //Name of the created file
 		GENERIC_WRITE,			//Write
@@ -46,7 +47,7 @@ void CreateCsvFile(const char FileName[])
 	return;
 }
 
-void ReadCsvFile(const char FileName[]) //maybe make name an value, (const char FileName[])
+vector <array <string, 2>> ReadCsvFile(const char FileName[]) //maybe make name an value, (const char FileName[])
 {
 	int Trys = 0;
 	start:
@@ -65,7 +66,7 @@ void ReadCsvFile(const char FileName[]) //maybe make name an value, (const char 
 		cout << "Trying to create File" << endl;
 		CreateCsvFile(FileName);
 		if (Trys <= 2) { Trys++; goto start; }  //attampts to create file then runs the code again 2 times
-		else { cout << "FAILURE (idk maybe check the folder)" << endl; return; } //if it failed 2 times or more return
+		else { cout << "FAILURE (idk maybe check the folder)" << endl; } //if it failed 2 times or more return
 	}
 
 	constexpr size_t BUFSIZE = 256;
@@ -132,10 +133,11 @@ void ReadCsvFile(const char FileName[]) //maybe make name an value, (const char 
 		//{
 		//	TaskData[i] = new string[Counter];
 		//}
+		CloseHandle(TaskFile);
+		return TaskData;
 	}
 	else { cout << "file seems to be empty" << endl; }
 	CloseHandle(TaskFile);
-	return;
 }
 
 string ReadCsvFileLine(int WantedLine)
