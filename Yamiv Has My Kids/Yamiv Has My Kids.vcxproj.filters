@@ -18,13 +18,13 @@
     <ClCompile Include="Yamiv Has My Kids.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ReadCsvFile.h">
+    <ClCompile Include="ManageCsvFile.h">
       <Filter>Header Files</Filter>
     </ClCompile>
     <ClCompile Include="PopUp.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ReadCsvFile.cpp">
+    <ClCompile Include="ManageCsvFile.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -34,7 +34,7 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Exemple.csv">
+    <None Include="TaskList.csv">
       <Filter>Resource Files</Filter>
     </None>
   </ItemGroup>

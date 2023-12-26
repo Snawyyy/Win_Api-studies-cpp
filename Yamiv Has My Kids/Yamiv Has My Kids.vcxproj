@@ -128,15 +128,15 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="PopUp.cpp" />
-    <ClCompile Include="ReadCsvFile.cpp" />
-    <ClCompile Include="ReadCsvFile.h" />
+    <ClCompile Include="ManageCsvFile.cpp" />
+    <ClCompile Include="ManageCsvFile.h" />
     <ClCompile Include="Yamiv Has My Kids.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="PopUp.h" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Exemple.csv" />
+    <None Include="TaskList.csv" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

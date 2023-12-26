@@ -1,9 +1,9 @@
+#pragma once
 #include <iostream>
 
 #include "windows.h"
 #include "string"
-#include "ReadCsvFile.h"
-#pragma once
+#include "ManageCsvFile.h"
 
-inline void PopUp(const extern char* PopUpMessage, const extern char* PopUpTitle);
+void PopUp(const extern char* PopUpMessage, const extern char* PopUpTitle);
 int CalculateRemTime();

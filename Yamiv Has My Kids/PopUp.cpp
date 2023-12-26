@@ -1,6 +1,6 @@
 #include "PopUp.h"
 
-inline void PopUp(const char* PopUpMessage, const char* PopUpTitle)
+void PopUp(const char* PopUpMessage, const char* PopUpTitle)
 {
 	MessageBox(NULL, PopUpMessage, PopUpTitle, MB_OKCANCEL);
 }

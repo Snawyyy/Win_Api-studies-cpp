@@ -4,7 +4,7 @@
 #include <iostream>
 
 #include "Windows.h"
-#include "ReadCsvFile.h"
+#include "ManageCsvFile.h"
 #include "PopUp.h" //easier way to create a fast Pop up.
 #include "string"
 
@@ -27,15 +27,16 @@ VOID CALLBACK TimerProc() //The Function called when the timer's time is up.
 
 int main()
 {
+    ReadCsvFile("TaskList.csv");
     SYSTEMTIME St;
     GetLocalTime(&St); //gets Local time.
 
     std::cout << "Hello World!\n the time now is: " << St.wHour << ":" << St.wMinute << std::endl; //debug
 
-    SetTimer(nullptr,        //handle to main window (there is no main window)
-        1,                  //timer identifier
-        CalculateRemTime(),              //time.
-        (TIMERPROC)TimerProc); // calls the function that pops the Popup.
+   // SetTimer(nullptr,        //handle to main window (there is no main window)
+     //   1,                  //timer identifier
+     //   CalculateRemTime(),              //time.
+     //   (TIMERPROC)TimerProc); // calls the function that pops the Popup.
 
     MSG msg;
     while (GetMessage(&msg, NULL, 0, 0)) // keeps the cmd open beacuse there is no window, without that the timer cant work.
