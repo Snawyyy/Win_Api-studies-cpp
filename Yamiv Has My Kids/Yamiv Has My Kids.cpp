@@ -24,7 +24,6 @@ int main()
         TranslateMessage(&msg);
         DispatchMessage(&msg);
     }
-
 }
 
 
