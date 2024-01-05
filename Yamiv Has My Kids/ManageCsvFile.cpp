@@ -65,8 +65,8 @@ vector <array <string, 2>> ReadCsvFile(const char FileName[]) //maybe make name 
 		cout << "Failed to open" << endl;
 		cout << "Trying to create File" << endl;
 		CreateCsvFile(FileName);
-		if (Trys <= 2) { Trys++; goto start; }  //attampts to create file then runs the code again 2 times
-		else { cout << "FAILURE (idk maybe check the folder)" << endl; } //if it failed 2 times or more return
+		if (Trys <= 2) { Trys++; goto start; }  
+		else { cout << "FAILURE (idk maybe check the folder)" << endl; } 
 	}
 
 	constexpr size_t BUFSIZE = 256;
@@ -103,21 +103,21 @@ vector <array <string, 2>> ReadCsvFile(const char FileName[]) //maybe make name 
 			{
 				Line[dwBytesAdded] = '\0';				//trims the empty parts of the char array.
 				TaskData[row][column] = (Line);			//adds the line aka "char array" into the 2d string vector.
-				cout << "column added: "<<Line<< endl; //outputs its success.
-				column=0;							    //Beacuse its the end of the line in resets the column to '0'.
-				row++;									//next row.
+				cout << "column added: "<<Line<< endl; 
+				column=0;							    
+				row++;									
 				cout << "New Row" << endl;
 				TaskData.push_back({ "Temporary","Temporary" }); //initalizes the next vector.
 				dwBytesAdded = 0;
 				j = 0;
 			}
 			else { Line[j] = buffer[i]; dwBytesAdded++; j++; } //adds the current char from the buffer into the line.
-			if (buffer[i] == ',') //if reaches ',' it means its the next column.
+			if (buffer[i] == ',') //next column.
 			{
-				Line[dwBytesAdded-1] = '\0';				//trims the empty parts of the char array.
-				TaskData[row][column] = (Line);			//adds the line aka "char array" into the 2d string vector.
-				cout << "column added: "<< Line << endl; //outputs its success.
-				column++;								//next column.
+				Line[dwBytesAdded-1] = '\0';				
+				TaskData[row][column] = (Line);			
+				cout << "column added: "<< Line << endl; 
+				column++;								
 				if (column == 2) { column = 0; }
 				dwBytesAdded = 0;
 				j = 0;

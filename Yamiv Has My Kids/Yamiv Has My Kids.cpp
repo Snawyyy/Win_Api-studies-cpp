@@ -14,9 +14,9 @@ int main()
 {
     SYSTEMTIME St;
     GetLocalTime(&St); //gets Local time.
-        TimedNotification();
+    TimedNotification();
     
-    std::cout << "Hello World!\n the time now is: " << St.wHour << ":" << St.wMinute << std::endl; //debug
+    cout << "Hello World!\n the time now is: " << St.wHour << ":" << St.wMinute << std::endl; //debug
 
     MSG msg;
     while (GetMessage(&msg, NULL, 0, 0)) // keeps the cmd open beacuse there is no window, without that the timer cant work.
